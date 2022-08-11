@@ -1,0 +1,116 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General Styles and Styles not pertaining to the main layout*/
+
+// Colors
+$Blue: hsl(246, 80%, 60%);
+$Light-orange: hsl(15, 100%, 70%);
+$Soft-blue: hsl(195, 74%, 62%);
+$Light-red : hsl(348, 100%, 68%);
+$Lime-green: hsl(145, 58%, 55%);
+$Violet: hsl(264, 64%, 52%);
+$Soft-orange: hsl(43, 84%, 65%);
+$Very-dark-blue: hsl(226, 43%, 10%);
+$Dark-blue: hsl(235, 46%, 20%);
+$Desaturated-blue: hsl(235, 45%, 61%);
+$Pale-Blue: hsl(236, 100%, 87%);
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: $Very-dark-blue;
+    color: #fff;
+
+}
+
+.work{
+    background: $Light-orange url(/images/icon-work.svg) no-repeat top right 20px;
+}
+.play{
+    background: $Soft-blue url(/images/icon-play.svg) no-repeat top right 20px;
+}
+.study{
+    background: $Light-red url(/images/icon-study.svg) no-repeat top right 20px;
+}
+.exercise{
+    background: $Lime-green url(/images/icon-exercise.svg) no-repeat top right 20px;
+}
+.social{
+    background: $Violet url(/images/icon-social.svg) no-repeat top right 20px;
+}
+.self-care{
+    background: $Soft-orange url(/images/icon-self-care.svg) no-repeat top right 20px;
+}
+

@@ -1,0 +1,164 @@
+@use "sass:math";
+
+@function pxToRem($pxValue) {
+    @return math.div($pxValue, 16px) * 1rem;
+}
+
+.dashboard-container {
+    margin: 0 auto;
+    width: fit-content;
+
+    @media screen and (min-width:1440px) {
+        display: grid;
+        grid-template-columns: repeat(4, pxToRem(255px));
+        grid-template-rows: repeat(2, pxToRem(244px));
+        margin: 10% auto;
+        gap: pxToRem(30px);
+    }
+
+    .dashboard-user-container {
+        background: $Dark-blue;
+        max-width: pxToRem(327px);
+        border-radius: pxToRem(15px);
+        grid-row: 1/3;
+        grid-column: 1;
+
+        .dashboard-user-content {
+            background: $Blue;
+            border-radius: pxToRem(15px);
+            padding: pxToRem(30px) pxToRem(20px);
+            display: flex;
+            gap: pxToRem(20px);
+
+            @media screen and (min-width:1440px) {
+                flex-direction: column;
+                padding-right: pxToRem(160px);
+                padding-bottom: pxToRem(100px);
+            }
+
+            img {
+                width: pxToRem(64px);
+                border: 2px solid white;
+                border-radius: 100%;
+            }
+
+            .dashboard-user-title {
+                p {
+                    font-size: pxToRem(15px);
+                    color: $Pale-Blue;
+                }
+
+                .user-name {
+                    font-size: pxToRem(24px);
+                    font-size: 300;
+                    color: white;
+
+                    @media screen and (min-width:1440px) {
+                        font-size: pxToRem(40px);
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+
+        .dashboard-user-select {
+            display: flex;
+            justify-content: space-around;
+
+            @media screen and (min-width:1440px) {
+                flex-direction: column;
+                justify-content: space-between;
+                padding-top: pxToRem(10px);
+            }
+
+            .user-select {
+                font-size: pxToRem(18px);
+                color: $Pale-Blue;
+                cursor: pointer;
+                padding: pxToRem(20px) 0;
+
+                &:hover {
+                    color: white;
+                }
+
+                @media screen and (min-width:1440px) {
+                    padding: pxToRem(10px) pxToRem(20px);
+                }
+            }
+
+        }
+
+    }
+
+    .dashboard-tracker {
+        max-width: pxToRem(327px);
+        min-height: pxToRem(160px);
+        border-radius: pxToRem(15px);
+        position: relative;
+        margin: pxToRem(20px) 0;
+
+        @media screen and (min-width:1440px) {
+            margin: 0;
+        }
+
+
+        .tracker {
+            background: $Dark-blue;
+            border-radius: pxToRem(15px);
+            display: flex;
+            flex-direction: column;
+            padding: pxToRem(20px);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $Desaturated-blue
+            }
+
+
+            @media screen and (min-width:1440px) {
+                padding: pxToRem(35px);
+
+            }
+
+            .title {
+                font-size: pxToRem(18px);
+                font-weight: 400;
+            }
+
+            .current {
+                font-size: pxToRem(32px);
+                font-weight: 300;
+
+                @media screen and (min-width:1440px) {
+                    font-size: pxToRem(56px);
+                }
+            }
+
+            .previous {
+                font-size: pxToRem(15px);
+                color: $Pale-Blue;
+            }
+
+            .tracker-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .tracker-bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @media screen and (min-width:1440px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+        }
+
+    }
+}
